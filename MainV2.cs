@@ -561,7 +561,7 @@ namespace MissionPlanner
             // setup adsb
             Utilities.adsb.UpdatePlanePosition += adsb_UpdatePlanePosition;
 
-            MAVLinkInterface.UpdateADSBPlanePosition += adsb_UpdatePlanePosition;
+            //MAVLinkInterface.UpdateADSBPlanePosition += adsb_UpdatePlanePosition;
 
             Form splash = Program.Splash;
 
@@ -2639,8 +2639,8 @@ namespace MissionPlanner
                                 try
                                 {
                                     // poll for version if we dont have it - every mav every port
-                                    if (!MAV.cs.armed && (DateTime.Now.Second % 20) == 0 && MAV.cs.version < new Version(0, 1))
-                                        port.getVersion(MAV.sysid, MAV.compid, false);
+                                    //if (!MAV.cs.armed && (DateTime.Now.Second % 20) == 0 && MAV.cs.version < new Version(0, 1))
+                                    //    port.getVersion(MAV.sysid, MAV.compid, false);
 
                                     // are we talking to a mavlink2 device
                                     if (MAV.mavlinkv2)
@@ -3508,7 +3508,7 @@ namespace MissionPlanner
                         ComponentResourceManager rm = new ComponentResourceManager(view.GetType());
                         foreach (Control ctrl in view.Controls)
                         {
-                            rm.ApplyResource(ctrl);
+                            //rm.ApplyResource(ctrl);
                         }
                         rm.ApplyResources(view, "$this");
                     }

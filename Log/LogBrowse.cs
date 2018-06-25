@@ -704,7 +704,7 @@ namespace MissionPlanner.Log
 
             CreateChart(zg1);
 
-            ResetTreeView(logdata.SeenMessageTypes);
+            ///ResetTreeView(logdata.SeenMessageTypes);
 
             Loading.ShowLoading("Generating Map", this);
 
@@ -729,6 +729,11 @@ namespace MissionPlanner.Log
             CMB_preselect.DataSource = graphs;
 
             log.Info("LoadLog2 Done");
+        }
+
+        private void ResetTreeView(object seenMessageTypes)
+        {
+            throw new NotImplementedException();
         }
 
         private void populateRowData(int rowstartoffset, int rowIndex, int destDGV = -1)
@@ -2262,14 +2267,14 @@ namespace MissionPlanner.Log
 
             int b = 0;
 
-            foreach (string item2 in logdata.SeenMessageTypes)
-            {
-                string celldata = item2.Trim();
-                if (!options.Contains(celldata))
-                {
-                    options.Add(celldata);
-                }
-            }
+            //foreach (string item2 in logdata.SeenMessageTypes)
+            //{
+            //    string celldata = item2.Trim();
+            //    if (!options.Contains(celldata))
+            //    {
+            //        options.Add(celldata);
+            //    }
+            //}
 
             options.Sort();
 
